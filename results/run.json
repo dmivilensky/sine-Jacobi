@@ -1,0 +1,590 @@
+{
+  "archive_sha256": "efaf4681c909c9a3eac175e63687c9bb3ce24101e9f32e11507f27081eafbbe8",
+  "created_utc": "2026-10-04T10:05:04.678950+00:00",
+  "environment": {
+    "architecture": "arm64",
+    "cpu_model": "Apple M4 Max",
+    "efficiency_cores": 4,
+    "jobs_requested": 8,
+    "logical_cpus": 14,
+    "memory_bytes": 38654705664,
+    "performance_cores": 10,
+    "physical_cpus": 14,
+    "platform": "macOS-15.8.1-arm64-arm-64bit-Mach-O",
+    "python": "3.13.14 (main, Jun 10 2026, 12:24:04) [Clang 17.0.0 (clang-1700.6.4.2)]",
+    "thread_environment": {
+      "MKL_NUM_THREADS": "1",
+      "NUMEXPR_NUM_THREADS": "1",
+      "OMP_NUM_THREADS": "1",
+      "OPENBLAS_NUM_THREADS": "1",
+      "VECLIB_MAXIMUM_THREADS": "1"
+    }
+  },
+  "exact_input_sha256": {
+    "profile.txt": "4a22d1adf0edb935bbe7ca422c4e5cb3cdf3abdd898525b8930a98014ff5aa48",
+    "radius.txt": "9146a7d30739927d6a23e60cbd91f63ba0faca1715b90f6587f1a41625fe6e88",
+    "reference.txt": "d1f51fc6025a460020d92b4ea1cae389d5350045a4ececb96c263a05906176b6",
+    "run.json": "06b7bd3d113cc7ba1a5240286c62495382c6118a89d39787fb8fd8b60880eace",
+    "transport.txt": "299db180f83d8a2844cd75c3e66537b5dff58907df6908e0c9de4b3c7f733790"
+  },
+  "finished_utc": "2026-10-04T10:42:02.702500+00:00",
+  "format": "SINEJACOBI_RUN_RECORD_1",
+  "generation": {
+    "elapsed_seconds": 1290.491,
+    "environment": {
+      "jobs_requested": 8,
+      "numpy": "2.3.5",
+      "platform": "macOS-15.8.1-arm64-arm-64bit-Mach-O",
+      "python": "3.13.14 (main, Jun 10 2026, 12:24:04) [Clang 17.0.0 (clang-1700.6.4.2)]",
+      "scipy": "1.17.0",
+      "thread_environment": {
+        "MKL_NUM_THREADS": "1",
+        "NUMEXPR_NUM_THREADS": "1",
+        "OMP_NUM_THREADS": "1",
+        "OPENBLAS_NUM_THREADS": "1",
+        "VECLIB_MAXIMUM_THREADS": "1"
+      }
+    },
+    "jobs": 8,
+    "native_build": {
+      "binary_sha256": "b8f4c06a6247d03a447479f159dde310ed94d309db4b9c1f0074ef1c2359aad3",
+      "inputs": {
+        "compiler": "/usr/bin/c++",
+        "compiler_sha256": "36dab8797a308a8de401e91b9987354c52b2035495853bd2028ed50ee50b0228",
+        "dependencies": {
+          "/opt/homebrew/include/gmp.h": "920496a9867a23dec3410e19da39ac446743694d539651bd78015240b0704e4b",
+          "/opt/homebrew/include/mpfr.h": "588c2bd606cba060afb49cd024f9119e996089a341a99d1dc7e0367622335a13",
+          "/opt/homebrew/lib/libgmp.a": "a41cc2b25b6b7d261aa43b80f9d0674ccfd90a583d74d79fd28bcfa596a816cd",
+          "/opt/homebrew/lib/libmpfr.a": "0d740c9bd5f4f907fa69e0734247ce2bd83397aa6ea12d9b7a9b69c3bc9e8a9a"
+        },
+        "flags": [
+          "-std=c++17",
+          "-O3",
+          "-ffp-contract=off",
+          "-fno-fast-math",
+          "-I/Users/dmitrii.pasechniuk/Desktop/sine-jacobi-repro/programs/native",
+          "-I/opt/homebrew/include"
+        ],
+        "libraries": [
+          "/opt/homebrew/lib/libmpfr.a",
+          "/opt/homebrew/lib/libgmp.a"
+        ],
+        "source_sha256": {
+          "box_arithmetic.hpp": "8b9fd0041c75e46f8372920bc65f2a27134ea664750fc2a1c2bd01295c7159f3",
+          "compact_cover.hpp": "c4789752a63fe26488ec4589811bb987ebdfac47de43cc96cb3dac13aeba0d81",
+          "flow.hpp": "427510a938ab343632bbca0ec3b603c71360d9fe648549915e940b7e8cef1437",
+          "interval.hpp": "95505a79c08cea111ed904042d92070a8bfb62112e325a1ff2543d38b172c302",
+          "mpfr_api.hpp": "d42bcbaf7dab62d6569019302d92f2fe38d2bd6e9aa02d3483de6a9a93a73c5a",
+          "primal.hpp": "4621d4c337a5bc1942cf518a4f5415056a9f06e9d46a67601618f3a4a56571ef",
+          "produce_primal.cpp": "abf7d57b9dd88779b4c262c10a6cdb998879c83ca33b2510dbdaa2050b0d6716",
+          "quadrature.hpp": "b1272364b9cd5932de675bb987ec1c30bd070c8d2c1990ac6cb973347310a65d",
+          "rational.hpp": "1b92f3137340835fe39634e78e173c1a321fbacd5a56b2f34e0a85f5afc1ba85",
+          "reference.hpp": "b8fd55a120fdde3503e7264263ab1009bb5d6ce5ed17cb0c340ec39a987876c2",
+          "series.hpp": "a5c6f1dd6232bb1bda4f22e45d7818d0b59d89af4a90758c234518f5c92c69bd",
+          "state_cover.hpp": "8a1fea6ebda3319d9808508e5716b2d6371448641bae2c0bfa9aab16a874b130",
+          "trace.hpp": "84a6dc701b0eee8021caa26a27f3cd4ca7e79ee8cba4ac200b78331ea0e87a6e",
+          "transport_kernel.hpp": "97d2f4179d7499f7ab61219c912a096eac5e72f5e2709e725b5266ed6310eeb9"
+        }
+      }
+    },
+    "output": "/Users/dmitrii.pasechniuk/Desktop/sine-jacobi-repro/results/inputs",
+    "scope": "Search generation only; run the separate full certificate verifier.",
+    "settings": {
+      "fit_digits": 12,
+      "maximum_support_terms": 10,
+      "price_accuracy_factor": 32,
+      "primal": {
+        "degree": 16,
+        "iterations": 800,
+        "order": 192,
+        "radius_goal": "1e-12"
+      },
+      "reference_digits": 11,
+      "scale_levels": 9,
+      "scale_search": {
+        "degree": 3,
+        "grid": 17,
+        "iterations": 300,
+        "order": 32
+      },
+      "state_degree": 2,
+      "transport_coarse": {
+        "degree": 3,
+        "grid": 33,
+        "iterations": 600,
+        "order": 64
+      },
+      "transport_fine": {
+        "degree": 4,
+        "grid": 41,
+        "iterations": 800,
+        "order": 80
+      },
+      "verification": {
+        "primal_second": {
+          "bits": 160,
+          "flow_tolerance": "1e-24",
+          "order": 14,
+          "quadrature_tolerance": "1e-18"
+        },
+        "reference": {
+          "bits": 128,
+          "flow_tolerance": "1e-20",
+          "order": 12,
+          "quadrature_tolerance": "1e-14"
+        },
+        "second": {
+          "bits": 128,
+          "flow_tolerance": "1e-20",
+          "order": 12,
+          "quadrature_tolerance": "1e-14",
+          "segments": 16,
+          "state_budget": 4096,
+          "verification_regions": 8
+        },
+        "sine": {
+          "absolute_error": "1e-18",
+          "bits": 160
+        }
+      }
+    },
+    "shared_native_sha256": {
+      "box_arithmetic.hpp": "8b9fd0041c75e46f8372920bc65f2a27134ea664750fc2a1c2bd01295c7159f3",
+      "compact_cover.hpp": "c4789752a63fe26488ec4589811bb987ebdfac47de43cc96cb3dac13aeba0d81",
+      "flow.hpp": "427510a938ab343632bbca0ec3b603c71360d9fe648549915e940b7e8cef1437",
+      "interval.hpp": "95505a79c08cea111ed904042d92070a8bfb62112e325a1ff2543d38b172c302",
+      "mpfr_api.hpp": "d42bcbaf7dab62d6569019302d92f2fe38d2bd6e9aa02d3483de6a9a93a73c5a",
+      "primal.hpp": "4621d4c337a5bc1942cf518a4f5415056a9f06e9d46a67601618f3a4a56571ef",
+      "quadrature.hpp": "b1272364b9cd5932de675bb987ec1c30bd070c8d2c1990ac6cb973347310a65d",
+      "rational.hpp": "1b92f3137340835fe39634e78e173c1a321fbacd5a56b2f34e0a85f5afc1ba85",
+      "reference.hpp": "b8fd55a120fdde3503e7264263ab1009bb5d6ce5ed17cb0c340ec39a987876c2",
+      "series.hpp": "a5c6f1dd6232bb1bda4f22e45d7818d0b59d89af4a90758c234518f5c92c69bd",
+      "state_cover.hpp": "8a1fea6ebda3319d9808508e5716b2d6371448641bae2c0bfa9aab16a874b130",
+      "trace.hpp": "84a6dc701b0eee8021caa26a27f3cd4ca7e79ee8cba4ac200b78331ea0e87a6e",
+      "transport_kernel.hpp": "97d2f4179d7499f7ab61219c912a096eac5e72f5e2709e725b5266ed6310eeb9"
+    },
+    "source_sha256": {
+      "__init__.py": "e5b7c5dff3b1892c17a9d42dbdba0cf10e137ed87d2692497770d200c8ab78fb",
+      "certificate_format.py": "db38a3bfefa901491d3a2af3f7590e75225b8de1442edfe96eb69b1cd845e7e5",
+      "common.py": "663beb229110866579b2c69641b0040a01ec1381fa395edcc97faf54d8677a63",
+      "fit_reference.py": "a1106b76e290cdeaa89a765e851d1d541ca24741e5b6b332edc2a1ecd979e67d",
+      "format_primal.py": "8b14731fcfce28caae4a22547fccfdc427e4c7d77833489d50710f91ffcdadd4",
+      "generate.py": "f0c8a41006a4305d833be36ba3587c11912f3ff862714c6debdde420dd271b99",
+      "model.py": "81d8d67c28a5050296f1706f4b2b49d30bd806deb062187f666699fc0f1ca57f",
+      "native/produce_primal.cpp": "abf7d57b9dd88779b4c262c10a6cdb998879c83ca33b2510dbdaa2050b0d6716",
+      "primal_model.py": "94954fc559c3ff1c9c19591c122d0078a9e20e8815caf5a39971f62006396176",
+      "search_primal.py": "9b5cd92d4d65b870e220ed54a025dd5b3f3018f0df5b425993ec4680112affa2",
+      "search_reference.py": "35731729e243ee29e1222bf098d6d27e0a45c6a52c29c20ac2c43a93791df47f",
+      "search_trace.py": "b6d09cd6cf2a5f3129dcc3dce639e74a7ba4e88ce72289f081b0d98d73c9b8d3",
+      "search_transport.py": "5f36728bf816ffc0520b3c39e862bc4cf1a47f09afeaaa909c9d3b317ce7cc59",
+      "test_search.py": "eb8f17c773d09e6da7a7090c96765cc0f83e143cf91ef0cc2445e30ec049ff64"
+    },
+    "status": "CANDIDATES_GENERATED",
+    "steps": [
+      {
+        "command": [
+          "/Users/dmitrii.pasechniuk/Desktop/sine-jacobi-repro/.venv/bin/python",
+          "-B",
+          "-m",
+          "programs_search.search_reference",
+          "--work",
+          "/Users/dmitrii.pasechniuk/Desktop/sine-jacobi-repro/results/work/search/stationary",
+          "--digits",
+          "11"
+        ],
+        "exit_code": 0,
+        "name": "search_reference",
+        "seconds": 42.888,
+        "status": "COMPLETED"
+      },
+      {
+        "command": [
+          "/Users/dmitrii.pasechniuk/Desktop/sine-jacobi-repro/.venv/bin/python",
+          "-B",
+          "-m",
+          "programs_search.fit_reference",
+          "--stationary",
+          "/Users/dmitrii.pasechniuk/Desktop/sine-jacobi-repro/results/work/search/stationary",
+          "--work",
+          "/Users/dmitrii.pasechniuk/Desktop/sine-jacobi-repro/results/work/search/reference",
+          "--digits",
+          "12",
+          "--maximum-terms",
+          "10"
+        ],
+        "exit_code": 0,
+        "name": "fit_reference",
+        "seconds": 4.699,
+        "status": "COMPLETED"
+      },
+      {
+        "command": [
+          "/Users/dmitrii.pasechniuk/Desktop/sine-jacobi-repro/.venv/bin/python",
+          "-B",
+          "-m",
+          "programs_search.search_transport",
+          "--reference",
+          "/Users/dmitrii.pasechniuk/Desktop/sine-jacobi-repro/results/work/search/reference/reference.json",
+          "--work",
+          "/Users/dmitrii.pasechniuk/Desktop/sine-jacobi-repro/results/work/search/scale-search",
+          "--order",
+          "32",
+          "--grid",
+          "17",
+          "--degree",
+          "3",
+          "--state-degree",
+          "2",
+          "--scale-levels",
+          "9",
+          "--refine-scales",
+          "--iterations",
+          "300",
+          "--without-second-moment"
+        ],
+        "exit_code": 0,
+        "name": "search_scales",
+        "seconds": 11.591,
+        "status": "COMPLETED"
+      },
+      {
+        "command": [
+          "/Users/dmitrii.pasechniuk/Desktop/sine-jacobi-repro/.venv/bin/python",
+          "-B",
+          "-m",
+          "programs_search.search_transport",
+          "--reference",
+          "/Users/dmitrii.pasechniuk/Desktop/sine-jacobi-repro/results/work/search/reference/reference.json",
+          "--scales",
+          "32.0",
+          "64.0",
+          "--state-degree",
+          "2",
+          "--work",
+          "/Users/dmitrii.pasechniuk/Desktop/sine-jacobi-repro/results/work/search/transport/coarse",
+          "--order",
+          "64",
+          "--grid",
+          "33",
+          "--degree",
+          "3",
+          "--iterations",
+          "600",
+          "--start",
+          "/Users/dmitrii.pasechniuk/Desktop/sine-jacobi-repro/results/work/search/scale-search/transport.json",
+          "--without-second-moment"
+        ],
+        "exit_code": 0,
+        "name": "transport_coarse",
+        "seconds": 4.165,
+        "status": "COMPLETED"
+      },
+      {
+        "command": [
+          "/Users/dmitrii.pasechniuk/Desktop/sine-jacobi-repro/.venv/bin/python",
+          "-B",
+          "-m",
+          "programs_search.search_transport",
+          "--reference",
+          "/Users/dmitrii.pasechniuk/Desktop/sine-jacobi-repro/results/work/search/reference/reference.json",
+          "--scales",
+          "32.0",
+          "64.0",
+          "--state-degree",
+          "2",
+          "--work",
+          "/Users/dmitrii.pasechniuk/Desktop/sine-jacobi-repro/results/work/search/transport",
+          "--order",
+          "80",
+          "--grid",
+          "41",
+          "--degree",
+          "4",
+          "--iterations",
+          "800",
+          "--start",
+          "/Users/dmitrii.pasechniuk/Desktop/sine-jacobi-repro/results/work/search/transport/coarse/transport.json",
+          "--start",
+          "/Users/dmitrii.pasechniuk/Desktop/sine-jacobi-repro/results/work/search/scale-search/transport.json",
+          "--without-second-moment"
+        ],
+        "exit_code": 0,
+        "name": "transport_fine",
+        "seconds": 11.159,
+        "status": "COMPLETED"
+      },
+      {
+        "command": [
+          "/Users/dmitrii.pasechniuk/Desktop/sine-jacobi-repro/.venv/bin/python",
+          "-B",
+          "-m",
+          "programs_search.search_transport",
+          "--reference",
+          "/Users/dmitrii.pasechniuk/Desktop/sine-jacobi-repro/results/work/search/reference/reference.json",
+          "--scales",
+          "32.0",
+          "64.0",
+          "--state-degree",
+          "2",
+          "--work",
+          "/Users/dmitrii.pasechniuk/Desktop/sine-jacobi-repro/results/work/search/second/coarse",
+          "--order",
+          "64",
+          "--grid",
+          "33",
+          "--degree",
+          "3",
+          "--iterations",
+          "600",
+          "--start",
+          "/Users/dmitrii.pasechniuk/Desktop/sine-jacobi-repro/results/work/search/transport/transport.json"
+        ],
+        "exit_code": 0,
+        "name": "second_coarse",
+        "seconds": 5.441,
+        "status": "COMPLETED"
+      },
+      {
+        "command": [
+          "/Users/dmitrii.pasechniuk/Desktop/sine-jacobi-repro/.venv/bin/python",
+          "-B",
+          "-m",
+          "programs_search.search_transport",
+          "--reference",
+          "/Users/dmitrii.pasechniuk/Desktop/sine-jacobi-repro/results/work/search/reference/reference.json",
+          "--scales",
+          "32.0",
+          "64.0",
+          "--state-degree",
+          "2",
+          "--work",
+          "/Users/dmitrii.pasechniuk/Desktop/sine-jacobi-repro/results/work/search/second",
+          "--order",
+          "80",
+          "--grid",
+          "41",
+          "--degree",
+          "4",
+          "--iterations",
+          "800",
+          "--start",
+          "/Users/dmitrii.pasechniuk/Desktop/sine-jacobi-repro/results/work/search/second/coarse/transport.json",
+          "--start",
+          "/Users/dmitrii.pasechniuk/Desktop/sine-jacobi-repro/results/work/search/transport/transport.json"
+        ],
+        "exit_code": 0,
+        "name": "second_fine",
+        "seconds": 6.907,
+        "status": "COMPLETED"
+      },
+      {
+        "command": [
+          "/Users/dmitrii.pasechniuk/Desktop/sine-jacobi-repro/.venv/bin/python",
+          "-B",
+          "-m",
+          "programs_search.search_primal",
+          "--reference",
+          "/Users/dmitrii.pasechniuk/Desktop/sine-jacobi-repro/results/work/search/reference/reference.json",
+          "--work",
+          "/Users/dmitrii.pasechniuk/Desktop/sine-jacobi-repro/results/work/search/primal",
+          "--scales",
+          "32.0",
+          "64.0",
+          "--degree",
+          "16",
+          "--order",
+          "192",
+          "--iterations",
+          "800",
+          "--bounded"
+        ],
+        "exit_code": 0,
+        "name": "primal_search",
+        "seconds": 358.059,
+        "status": "COMPLETED"
+      },
+      {
+        "command": [
+          "/Users/dmitrii.pasechniuk/Desktop/sine-jacobi-repro/.venv/bin/python",
+          "-B",
+          "-m",
+          "programs_search.format_primal",
+          "/Users/dmitrii.pasechniuk/Desktop/sine-jacobi-repro/results/work/search/primal/primal.json",
+          "/Users/dmitrii.pasechniuk/Desktop/sine-jacobi-repro/results/work/search/primal/parameters.txt"
+        ],
+        "exit_code": 0,
+        "name": "primal_format",
+        "seconds": 0.172,
+        "status": "COMPLETED"
+      },
+      {
+        "command": [
+          "/Users/dmitrii.pasechniuk/Desktop/sine-jacobi-repro/results/work/search/native-cache/produce_primal",
+          "/Users/dmitrii.pasechniuk/Desktop/sine-jacobi-repro/results/work/search/primal/parameters.txt",
+          "160",
+          "14",
+          "1e-24",
+          "1e-18",
+          "1e-12",
+          "/Users/dmitrii.pasechniuk/Desktop/sine-jacobi-repro/results/work/search/primal"
+        ],
+        "exit_code": 0,
+        "name": "primal_dyadic",
+        "seconds": 332.593,
+        "status": "COMPLETED"
+      },
+      {
+        "command": [
+          "/Users/dmitrii.pasechniuk/Desktop/sine-jacobi-repro/.venv/bin/python",
+          "-B",
+          "-m",
+          "programs_search.search_primal",
+          "--reference",
+          "/Users/dmitrii.pasechniuk/Desktop/sine-jacobi-repro/results/work/search/reference/reference.json",
+          "--work",
+          "/Users/dmitrii.pasechniuk/Desktop/sine-jacobi-repro/results/work/search/primal_second",
+          "--scales",
+          "32.0",
+          "64.0",
+          "--degree",
+          "16",
+          "--order",
+          "192",
+          "--iterations",
+          "800",
+          "--bounded",
+          "--second",
+          "--start",
+          "/Users/dmitrii.pasechniuk/Desktop/sine-jacobi-repro/results/work/search/primal/primal.json"
+        ],
+        "exit_code": 0,
+        "name": "primal_second_search",
+        "seconds": 44.992,
+        "status": "COMPLETED"
+      },
+      {
+        "command": [
+          "/Users/dmitrii.pasechniuk/Desktop/sine-jacobi-repro/.venv/bin/python",
+          "-B",
+          "-m",
+          "programs_search.format_primal",
+          "/Users/dmitrii.pasechniuk/Desktop/sine-jacobi-repro/results/work/search/primal_second/primal.json",
+          "/Users/dmitrii.pasechniuk/Desktop/sine-jacobi-repro/results/work/search/primal_second/parameters.txt"
+        ],
+        "exit_code": 0,
+        "name": "primal_second_format",
+        "seconds": 0.169,
+        "status": "COMPLETED"
+      },
+      {
+        "command": [
+          "/Users/dmitrii.pasechniuk/Desktop/sine-jacobi-repro/results/work/search/native-cache/produce_primal",
+          "/Users/dmitrii.pasechniuk/Desktop/sine-jacobi-repro/results/work/search/primal_second/parameters.txt",
+          "160",
+          "14",
+          "1e-24",
+          "1e-18",
+          "1e-12",
+          "/Users/dmitrii.pasechniuk/Desktop/sine-jacobi-repro/results/work/search/primal_second"
+        ],
+        "exit_code": 0,
+        "name": "primal_second_dyadic",
+        "seconds": 466.008,
+        "status": "COMPLETED"
+      }
+    ],
+    "work": "/Users/dmitrii.pasechniuk/Desktop/sine-jacobi-repro/results/work/search"
+  },
+  "inputs_ready": true,
+  "phases": [
+    {
+      "name": "search",
+      "seconds": 1291.413,
+      "started_utc": "2026-10-04T10:05:04.710331+00:00",
+      "status": "COMPLETED"
+    },
+    {
+      "name": "construction",
+      "seconds": 509.245,
+      "started_utc": "2026-10-04T10:26:36.126370+00:00",
+      "status": "COMPLETED"
+    },
+    {
+      "name": "packaging",
+      "seconds": 60.276,
+      "started_utc": "2026-10-04T10:35:05.415385+00:00",
+      "status": "COMPLETED"
+    },
+    {
+      "name": "verification",
+      "seconds": 356.891,
+      "started_utc": "2026-10-04T10:36:05.692928+00:00",
+      "status": "COMPLETED"
+    }
+  ],
+  "request": {
+    "input_sha256": null,
+    "mode": "search",
+    "settings_sha256": "68c327a770ae1cad19337121a2c7d4e93e2e20db3f939de63294aedd3da03ae4",
+    "source_sha256": {
+      "audit/__init__.py": "c21b88155087916a227273b4606f875d9f5bb98e41aeed7c6aed536a988f30c5",
+      "audit/checks.py": "e1a7a7bf559c4eb96e54c3314785678487f94d7f02d5d5df50c880b1752989ed",
+      "audit/exact.py": "73798b3e45fbde1b80c4e8396df44c003cd06cbd22373d4aa437ee58bbd92bd9",
+      "audit/report.py": "79876a39c708c88ef19126433a599684f7482907be7b71816d0955ba42251e18",
+      "audit/verify.py": "6d0821d74cc3a4c766b9a894d7e2ba9d6202153a302b3d5f07fb4b5e34a9ca93",
+      "compute.py": "45363179e692c0d4670fbb4e091f2394b44c76e9bba6012eacc08b54591d23fd",
+      "portable/__init__.py": "48062a67d902c3e68770b7c1e2c6a14bbe75af642ed75f090a885ffcc4b2d2ed",
+      "portable/cover.py": "dfd9f8c82872b50261d8d361c39ae5c16169ba97675912d8a372ae4e2e3f8577",
+      "portable/environment.py": "36573d95aafea133ce2a47555e3415de3e69e7972fdc5cc6fd7bdb5cb27ccd84",
+      "portable/verify.py": "28359b8d9309dd70a55335e8cc0ed727c0a8103a79b4eb5eb251385de59ddbe1",
+      "programs/__init__.py": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "programs/common.py": "3581205fe5293171d63f556673c3ff0da13f226616b879b446e310d77a4ec423",
+      "programs/native/box_arithmetic.hpp": "8b9fd0041c75e46f8372920bc65f2a27134ea664750fc2a1c2bd01295c7159f3",
+      "programs/native/compact_cover.hpp": "c4789752a63fe26488ec4589811bb987ebdfac47de43cc96cb3dac13aeba0d81",
+      "programs/native/flow.hpp": "427510a938ab343632bbca0ec3b603c71360d9fe648549915e940b7e8cef1437",
+      "programs/native/interval.hpp": "95505a79c08cea111ed904042d92070a8bfb62112e325a1ff2543d38b172c302",
+      "programs/native/mpfr_api.hpp": "d42bcbaf7dab62d6569019302d92f2fe38d2bd6e9aa02d3483de6a9a93a73c5a",
+      "programs/native/prepare_primal.cpp": "d8fb93f45ff2ad317dc8492ef483ca51762c8a92417c2b668ff7b7de5fb9bb9e",
+      "programs/native/primal.hpp": "4621d4c337a5bc1942cf518a4f5415056a9f06e9d46a67601618f3a4a56571ef",
+      "programs/native/probe.cpp": "3eafdec204139ee19e11308d7a99267ea87bc47d5d6b3f6e89ea9d56ebd062b2",
+      "programs/native/produce_transport.cpp": "e16757d2867dbd10a70236cd4b7d5c999cef61fe21ca4143ea61afa45b5df55f",
+      "programs/native/quadrature.hpp": "b1272364b9cd5932de675bb987ec1c30bd070c8d2c1990ac6cb973347310a65d",
+      "programs/native/rational.hpp": "1b92f3137340835fe39634e78e173c1a321fbacd5a56b2f34e0a85f5afc1ba85",
+      "programs/native/reference.hpp": "b8fd55a120fdde3503e7264263ab1009bb5d6ce5ed17cb0c340ec39a987876c2",
+      "programs/native/series.hpp": "a5c6f1dd6232bb1bda4f22e45d7818d0b59d89af4a90758c234518f5c92c69bd",
+      "programs/native/state_cover.hpp": "8a1fea6ebda3319d9808508e5716b2d6371448641bae2c0bfa9aab16a874b130",
+      "programs/native/trace.hpp": "84a6dc701b0eee8021caa26a27f3cd4ca7e79ee8cba4ac200b78331ea0e87a6e",
+      "programs/native/transport_kernel.hpp": "97d2f4179d7499f7ab61219c912a096eac5e72f5e2709e725b5266ed6310eeb9",
+      "programs/native/verify_primal.cpp": "b98a6126d56831cc51e7908f76f67d08a307409c93f625a2cca6405f95897719",
+      "programs/native/verify_reference.cpp": "658c50a9d1ac950ceed57f05ce8d9750c2b9c9c4a6c330815beeb4c9287d13d9",
+      "programs/native/verify_sine.cpp": "9805716b7e164bf49e0f79ba446800af48e73aa71203bd72ad2293eb2d58c692",
+      "programs/native/verify_transport.cpp": "5f4c597ec2b7692bcd77bf8a72cd075af33c065b42469beb1642776005d4eabd",
+      "programs/pack.py": "e00928d2860d2c8cfeda13ac49a280344a298201b906270b06a1b422cec9b9dd",
+      "programs/price_claims.py": "5a2723d6b1e34254a2cb31aae7530c304bfb78ae3058401a3a559a8c8a28431a",
+      "programs/proof.py": "4fd3c55d31a4130599317cd838dd4c74d18fe32df1d1c6fed000b94217654a43",
+      "programs/stages.py": "f38a2976a52ab7e4108cd092217ea2765b9cc95ae2b0b6c7770951f9806b72ec",
+      "programs/transport.py": "47cc7afb4d6bf311117262234c85ff9b04a9ea004e25187e434bd84ff28cbb1d",
+      "programs/workflow.py": "f8fcf1ebb251bd6e963825f7076e8ce6e20c504d42a4f7257749ed93b3509315",
+      "programs_search/__init__.py": "e5b7c5dff3b1892c17a9d42dbdba0cf10e137ed87d2692497770d200c8ab78fb",
+      "programs_search/certificate_format.py": "db38a3bfefa901491d3a2af3f7590e75225b8de1442edfe96eb69b1cd845e7e5",
+      "programs_search/common.py": "663beb229110866579b2c69641b0040a01ec1381fa395edcc97faf54d8677a63",
+      "programs_search/fit_reference.py": "a1106b76e290cdeaa89a765e851d1d541ca24741e5b6b332edc2a1ecd979e67d",
+      "programs_search/format_primal.py": "8b14731fcfce28caae4a22547fccfdc427e4c7d77833489d50710f91ffcdadd4",
+      "programs_search/generate.py": "f0c8a41006a4305d833be36ba3587c11912f3ff862714c6debdde420dd271b99",
+      "programs_search/model.py": "81d8d67c28a5050296f1706f4b2b49d30bd806deb062187f666699fc0f1ca57f",
+      "programs_search/native/produce_primal.cpp": "abf7d57b9dd88779b4c262c10a6cdb998879c83ca33b2510dbdaa2050b0d6716",
+      "programs_search/primal_model.py": "94954fc559c3ff1c9c19591c122d0078a9e20e8815caf5a39971f62006396176",
+      "programs_search/requirements.txt": "1668a3152e33680d94637b13421c15e68bd97cd8701f7f555c691f5bc5c0b9f3",
+      "programs_search/search_primal.py": "9b5cd92d4d65b870e220ed54a025dd5b3f3018f0df5b425993ec4680112affa2",
+      "programs_search/search_reference.py": "35731729e243ee29e1222bf098d6d27e0a45c6a52c29c20ac2c43a93791df47f",
+      "programs_search/search_trace.py": "b6d09cd6cf2a5f3129dcc3dce639e74a7ba4e88ce72289f081b0d98d73c9b8d3",
+      "programs_search/search_transport.py": "5f36728bf816ffc0520b3c39e862bc4cf1a47f09afeaaa909c9d3b317ce7cc59",
+      "programs_search/settings.json": "68c327a770ae1cad19337121a2c7d4e93e2e20db3f939de63294aedd3da03ae4",
+      "programs_search/test_search.py": "eb8f17c773d09e6da7a7090c96765cc0f83e143cf91ef0cc2445e30ec049ff64",
+      "verify_proof.py": "bae43ed9d4b663adf66d0d7a773cbdb4807a04ae470e7c0a5f3298778ec4f04e"
+    }
+  },
+  "status": "COMPLETED",
+  "verification_status": "PASS_FULL_NUMERICS",
+  "wall_seconds_this_invocation": 2217.95
+}

@@ -1,0 +1,83 @@
+{
+  "format": "SINEJACOBI_SEARCH_ORIGIN_1",
+  "sha256": {
+    "profile.txt": "4a22d1adf0edb935bbe7ca422c4e5cb3cdf3abdd898525b8930a98014ff5aa48",
+    "radius.txt": "9146a7d30739927d6a23e60cbd91f63ba0faca1715b90f6587f1a41625fe6e88",
+    "reference.txt": "d1f51fc6025a460020d92b4ea1cae389d5350045a4ececb96c263a05906176b6",
+    "run.json": "06b7bd3d113cc7ba1a5240286c62495382c6118a89d39787fb8fd8b60880eace",
+    "transport.txt": "299db180f83d8a2844cd75c3e66537b5dff58907df6908e0c9de4b3c7f733790"
+  },
+  "environment": {
+    "python": "3.13.14 (main, Jun 10 2026, 12:24:04) [Clang 17.0.0 (clang-1700.6.4.2)]",
+    "platform": "macOS-15.8.1-arm64-arm-64bit-Mach-O",
+    "numpy": "2.3.5",
+    "scipy": "1.17.0",
+    "jobs_requested": 8,
+    "thread_environment": {
+      "OMP_NUM_THREADS": "1",
+      "OPENBLAS_NUM_THREADS": "1",
+      "MKL_NUM_THREADS": "1",
+      "VECLIB_MAXIMUM_THREADS": "1",
+      "NUMEXPR_NUM_THREADS": "1"
+    }
+  },
+  "settings": {
+    "reference_digits": 11,
+    "fit_digits": 12,
+    "maximum_support_terms": 10,
+    "scale_levels": 9,
+    "state_degree": 2,
+    "scale_search": {
+      "order": 32,
+      "grid": 17,
+      "degree": 3,
+      "iterations": 300
+    },
+    "transport_coarse": {
+      "order": 64,
+      "grid": 33,
+      "degree": 3,
+      "iterations": 600
+    },
+    "transport_fine": {
+      "order": 80,
+      "grid": 41,
+      "degree": 4,
+      "iterations": 800
+    },
+    "primal": {
+      "degree": 16,
+      "order": 192,
+      "iterations": 800,
+      "radius_goal": "1e-12"
+    },
+    "price_accuracy_factor": 32,
+    "verification": {
+      "reference": {
+        "bits": 128,
+        "order": 12,
+        "flow_tolerance": "1e-20",
+        "quadrature_tolerance": "1e-14"
+      },
+      "second": {
+        "bits": 128,
+        "order": 12,
+        "flow_tolerance": "1e-20",
+        "quadrature_tolerance": "1e-14",
+        "state_budget": 4096,
+        "segments": 16,
+        "verification_regions": 8
+      },
+      "primal_second": {
+        "bits": 160,
+        "order": 14,
+        "flow_tolerance": "1e-24",
+        "quadrature_tolerance": "1e-18"
+      },
+      "sine": {
+        "bits": 160,
+        "absolute_error": "1e-18"
+      }
+    }
+  }
+}

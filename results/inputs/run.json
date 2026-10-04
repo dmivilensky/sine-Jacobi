@@ -1,0 +1,29 @@
+{
+  "format": "SINEJACOBI_RUN_1",
+  "reference": {
+    "bits": 128,
+    "order": 12,
+    "flow_tolerance": "1e-20",
+    "quadrature_tolerance": "1e-14"
+  },
+  "second": {
+    "bits": 128,
+    "order": 12,
+    "flow_tolerance": "1e-20",
+    "quadrature_tolerance": "1e-14",
+    "state_budget": 4096,
+    "segments": 16,
+    "verification_regions": 8,
+    "price_error": "4.76837158203125E-7"
+  },
+  "primal_second": {
+    "bits": 160,
+    "order": 14,
+    "flow_tolerance": "1e-24",
+    "quadrature_tolerance": "1e-18"
+  },
+  "sine": {
+    "bits": 160,
+    "absolute_error": "1e-18"
+  }
+}
