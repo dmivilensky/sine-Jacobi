@@ -183,8 +183,8 @@ $$
 These terms include the exterior contributions analytically; there is no numerical truncation of the infinite line. The base value is
 
 $$
-\mathcal B_{*}=-b+\frac{2b}{k}+\frac{3}{2k}\int_0^2\nu_k\,dq
--\omega\mathcal J_\varsigma(2)
+\mathcal{B}_{*}=-b+\frac{2b}{k}+\frac{3}{2k}\int_0^2\nu_k\,dq
+-\omega\mathcal{J}_\varsigma(2)
 -\omega\left(\frac{k}{\varsigma}-\frac{2H_{*}(\varsigma k)}{\varsigma^2}\right).
 $$
 
@@ -259,9 +259,7 @@ The prescribed-ground-parameter theorem establishes $\kappa(m_a)=k$. In code, th
 The zero-based residual order is
 
 $$
-F(a)=\left(\int m_a-1,\ \int\sqrt{m_a}-1,\
-H_{m_a}(32)-H_{*}(32),\ H_{m_a}(64)-H_{*}(64),\
-H_{m_a}(\varsigma k)-H_{*}(\varsigma k),\ S(m_a)-k^2/6\right).
+F(a)=\left(\int m_a-1,\ \int\sqrt{m_a}-1,\ H_{m_a}(32)-H_{\ast}(32),\ H_{m_a}(64)-H_{\ast}(64),\ H_{m_a}(\varsigma k)-H_{\ast}(\varsigma k),\ S(m_a)-k^2/6\right).
 $$
 
 The verifier replays the central flows and flows with every selected coefficient replaced by $c_{d_i}+[-\rho,\rho]$. The latter enclose every parameter vector in the cube simultaneously. They are used with the analytic derivative formulas to enclose all entries of $DF([-\rho,\rho]^6)$; evaluating the Jacobian only at the center would not suffice.
