@@ -26,7 +26,7 @@ The relaxed class in “Observations and the relaxed class” (`def:classes`) co
 $$
 \int m=1,\quad \kappa(m)=k,\quad
 H_m(s)=H_*(s)\quad\text{for }s\in\{32,64,\varsigma k\},\quad
-\operatorname{tr}K_m^2=\frac23.
+\text{tr } K_m^2=\frac23.
 $$
 
 Here $\varsigma=2704.261804447028$ is an exact rational. The root-mass condition $\int\sqrt m=1$ is not imposed in the dual relaxation; the primal construction satisfies it as an additional equation.
@@ -86,7 +86,7 @@ The values and dimensions in this section describe the supplied fixed candidate.
 | `reference.J` | Calibration integral $\mathcal J_\varsigma(2)$ |
 | `reference.mass_j` | $\int\bar m_k^{j/2}$, for $j=1,2,3$ |
 | `reference.H_signal_i` | $H_*(s_i)-H_{\bar m_k}(s_i)$ |
-| `reference.S` | $S(\bar m_k)=\frac{k^2}{4}\operatorname{tr}K_{\bar m_k}^2$ |
+| `reference.S` | $S(\bar m_k)=\frac{k^2}{4}\text{tr }K_{\bar m_k}^2$ |
 | `reference.S_signal` | $k^2/6-S(\bar m_k)$ |
 | `feasible.F_i`, `feasible.J_i_j` | Zero-based residual and Jacobian indices; paper indices are one-based |
 | Sine truncation `J` in JSON | The paper's truncation index $K$; unrelated to the calibration integral or Jacobian |
@@ -183,9 +183,9 @@ $$
 These terms include the exterior contributions analytically; there is no numerical truncation of the infinite line. The base value is
 
 $$
-\mathcal B_*=-b+\frac{2b}{k}+\frac{3}{2k}\int_0^2\nu_k\,dq
+\mathcal B_{*}=-b+\frac{2b}{k}+\frac{3}{2k}\int_0^2\nu_k\,dq
 -\omega\mathcal J_\varsigma(2)
--\omega\left(\frac{k}{\varsigma}-\frac{2H_*(\varsigma k)}{\varsigma^2}\right).
+-\omega\left(\frac{k}{\varsigma}-\frac{2H_{*}(\varsigma k)}{\varsigma^2}\right).
 $$
 
 `verify_reference.cpp` outputs its enclosure and the comparison masses and signals. In particular, `mass_3` is the energy of the comparison density, whereas `base` is the calibration lower-bound term.
@@ -260,8 +260,8 @@ The zero-based residual order is
 
 $$
 F(a)=\left(\int m_a-1,\ \int\sqrt{m_a}-1,\
-H_{m_a}(32)-H_*(32),\ H_{m_a}(64)-H_*(64),\
-H_{m_a}(\varsigma k)-H_*(\varsigma k),\ S(m_a)-k^2/6\right).
+H_{m_a}(32)-H_{*}(32),\ H_{m_a}(64)-H_{*}(64),\
+H_{m_a}(\varsigma k)-H_{*}(\varsigma k),\ S(m_a)-k^2/6\right).
 $$
 
 The verifier replays the central flows and flows with every selected coefficient replaced by $c_{d_i}+[-\rho,\rho]$. The latter enclose every parameter vector in the cube simultaneously. They are used with the analytic derivative formulas to enclose all entries of $DF([-\rho,\rho]^6)$; evaluating the Jacobian only at the center would not suffice.
@@ -269,8 +269,8 @@ The verifier replays the central flows and flows with every selected coefficient
 From the exact preconditioner $C$, the rational audit recomputes
 
 $$
-\eta=\max_i\operatorname{mag}\left(\sum_jC_{ij}[F_j(0)]\right),\qquad
-\theta=\max_i\sum_j\operatorname{mag}\left(\delta_{ij}-\sum_\ell C_{i\ell}[\partial_jF_\ell]\right).
+\eta=\max_i\text{mag }\left(\sum_jC_{ij}[F_j(0)]\right),\qquad
+\theta=\max_i\sum_j\text{mag }\left(\delta_{ij}-\sum_\ell C_{i\ell}[\partial_jF_\ell]\right).
 $$
 
 It requires $\theta<1$ and $\eta+\theta\rho<\rho$, and also verifies that the separately reported norm bounds dominate these recomputed bounds and establish the same strict self-map. The bound $\theta<1$ also implies that the square preconditioner $C$ is nonsingular. The contraction theorem applied to $a\mapsto a-CF(a)$ therefore gives a unique zero of $F$ in the cube. The energy theorem gives
@@ -429,7 +429,7 @@ The support is $p_0+\sum_j p_jQ/(Q+\zeta_j)$, $Q=q(2-q)$, with positive coeffici
 After interval evaluation of the center, let $\eta$ be the upper bound on the correction norm. The preliminary native search chooses
 
 $$
-\rho=\operatorname{round}_{\uparrow}(2\eta+2^{-p}),
+\rho=\text{round }_{\uparrow}(2\eta+2^{-p}),
 $$
 
 where $p$ is the primal precision (160 bits by default), once $2\eta$ is smaller than `radius_goal`. It then evaluates the whole cube. This correction serves candidate selection; subsequent construction and the final reader reconstruct/replay the witnesses for the fixed selected candidate. A numerically optimized candidate is not claimed to be a global minimizer.
@@ -513,23 +513,3 @@ The two `run.json` files have different roles: the output-root file records the 
 Intervals have `exact` rational endpoints and `decimal_outward` endpoints. Code/paper residual indices differ by one. Derived scalar improvement/gap endpoints are an outward presentation of an already conservative scalar bound. There is no duplicate `results.json`, separate bound assembled by another program, or publication-specific table with hard-coded digits.
 
 `run.json.phases` records search, construction, packaging and verification wall times (or input copying instead of search). Resume retains prior phase records; `wall_seconds_this_invocation` covers only the latest invocation. `verification.json.elapsed_seconds` covers the internal standalone check, including compilation, but excludes extraction/cleanup. `archive_check_seconds` includes outer extraction/launch/cleanup; `archive_extraction_seconds` identifies extraction. Native durations overlap and must not be summed as wall time. `toolchain.compilation_seconds` records compilation separately. Machine memory capacity is recorded when available; peak process memory is not measured.
-
-## 10. Standalone proof and revision scope
-
-No source package is needed to replay a generated proof. Extract into an empty directory:
-
-```sh
-mkdir standalone-proof
-tar -xJf results/proof.tar.xz -C standalone-proof
-cd standalone-proof
-python3 -I -B verify.py --jobs 8 --output verification.json
-```
-
-The archive has its own short `README.txt`: the self-contained proof's launch instruction, not a second repository README. It contains no search history, executables, caches, duplicate central profile/partition or article copies. `claims.json` stores small exact inputs and interval claims; `data/` stores large witnesses. `manifest.json` binds files by size and SHA-256. Hashes detect changes, not mathematical correctness or source authenticity. Only full replay establishes acceptance relative to the trust basis in section 5.
-
-The packed state cover preserves exact binary64 coordinates, both complete subdivision trees, one common strict upper bound per cell, and cell-price intervals. Each selected leaf bound is recomputed. ODE/Taylor evidence remains separate and is retained. An accepted archive is sufficient to re-establish all numerical premises without repeating the search.
-
-This revision removes historical output/validation files and unused Python readers, unifies native headers and public launch commands, updates article labels in comments and reduces duplicated output. Exact supplied inputs and native mathematical formulas/acceptance predicates are preserved. Regional price claims now use exact summation with an outward allowance and are accepted only by the native replay predicates. Thread limits and reduced tracing are explicit.
-
-Prepared on 2026-10-04 by static source review only: no search, construction, numerical verification, compilation or test suite was executed for this revision. Its next complete local run supplies the evidence and timings for the next article update.
-
